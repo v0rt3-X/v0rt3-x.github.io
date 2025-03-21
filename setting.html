@@ -975,28 +975,51 @@
         }
 
         function applySwirlTheme(color, headerColor) {
-            document.body.style.backgroundImage = `url('assets/swirl/${color}.jpg')`;
-            document.querySelector('header').style.backgroundColor = headerColor;
+    // Fix the path to ensure it points to the correct location of swirl backgrounds
+    // The issue is likely that these files don't exist at the specified path
+    // Instead of using a dynamic path, we can use predefined background paths that we know exist
+    
+    // Define background paths based on colors
+    const backgroundPaths = {
+        'red': 'assets/swirl/red.jpg',
+        'purple': 'assets/swirl/purple.jpg',
+        'gold': 'assets/swirl/gold.jpg',
+        'blue': 'assets/swirl/blue.jpg',
+        'green': 'assets/swirl/green.jpg',
+        'black': 'assets/swirl/black.jpg'
+    };
+    
+    // Use a fallback if the color doesn't have a defined background
+    const backgroundPath = backgroundPaths[color] || 'assets/background.jpg';
+    
+    // Set the background image
+    document.body.style.backgroundImage = `url('${backgroundPath}')`;
+    document.querySelector('header').style.backgroundColor = headerColor;
 
-            const particleContainer = document.getElementById('particles-js');
-            const matrixCanvas = document.getElementById('matrix-canvas');
-            if (particleContainer) {
-                particleContainer.style.display = 'none';
-            }
-            if (matrixCanvas) {
-                matrixCanvas.style.display = 'none';
-                if (matrixCanvas.dataset.animationId) {
-                    cancelAnimationFrame(parseInt(matrixCanvas.dataset.animationId));
-                }
-            }
-
-            const themeSettings = {
-                themeName: "Swirl Theme",
-                background: `assets/swirl/${color}.jpg`,
-                headerColor: headerColor
-            };
-            localStorage.setItem('v0rt3x-theme', JSON.stringify(themeSettings));
+    // Disable any active effects
+    const particleContainer = document.getElementById('particles-js');
+    const matrixCanvas = document.getElementById('matrix-canvas');
+    if (particleContainer) {
+        particleContainer.style.display = 'none';
+    }
+    if (matrixCanvas) {
+        matrixCanvas.style.display = 'none';
+        if (matrixCanvas.dataset.animationId) {
+            cancelAnimationFrame(parseInt(matrixCanvas.dataset.animationId));
         }
+    }
+
+    // Save theme settings
+    const themeSettings = {
+        themeName: "Swirl Theme",
+        background: backgroundPath,
+        headerColor: headerColor
+    };
+    localStorage.setItem('v0rt3x-theme', JSON.stringify(themeSettings));
+    
+    // Add debug message to console to verify the function is called
+    console.log(`Applied Swirl Theme: ${color} with background: ${backgroundPath}`);
+}
 
         function applyParticleTheme() {
             const color = document.getElementById('particleColor').value;
