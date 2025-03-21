@@ -1,0 +1,271 @@
+    /* Add this to your games.css file */
+
+.image-slot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.favorite-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: gold;
+    font-size: 24px;
+    z-index: 10;
+    cursor: pointer;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+    transition: transform 0.2s ease;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+
+/* For the favorites page */
+.favorites-header {
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+}
+
+.no-favorites {
+    text-align: center;
+    color: white;
+    margin: 50px 0;
+    font-size: 1.2em;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep particles behind the content */
+    background-color: #000000;
+    display: none;
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo-container {
+            display: flex; /* Flexbox for horizontal alignment */
+            align-items: center; /* Align vertically centered */
+            margin-left: 50px; /* Move Skibidi 50px from the edge */
+        }
+
+        /* Logo image styling */
+        .logo-img {
+            width: 30px; /* Increase the width of the logo */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+        #logo-text {
+            margin: 0; /* Remove default margin from the h1 */
+            font-size: 2rem; /* Ensure the text is large and centered */
+            color: white;
+            text-align: left;
+        }
+        /* Navigation container (for the Two Players and Games text) */
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+            /* Styling for the navigation links */
+            .nav-container a {
+                margin-right: 50px; /* Move the text 50px from the edge */
+                font-size: 1.2rem;
+                color: white;
+                text-decoration: none;
+            }
+
+                .nav-container a:hover {
+                    color: purple; /* Change color on hover */
+                }
+
+        /* Gear button styling */
+        .gear-button {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .gear-button:hover {
+                background-color: #444;
+            }
+
+        /* Position the gear button at the bottom left */
+        .gear-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000; /* Ensures the button stays on top */
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        body {
+            transition: background 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+        }
+
+        body {
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            width: 100%;
+            background-color: rebeccapurple;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: none;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: transparent;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .grid-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            overflow: auto;
+            justify-content: center;
+        }
+
+        .grid-item {
+            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc((100% - 100px) / 6); /* 100px accounts for the 5 gaps between 6 items */
+            max-width: 150px;
+            min-width: 100px;
+        }
+
+            .grid-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 15px 2px rgba(255, 99, 255, 0.5);
+            }
+
+        .image-slot {
+            max-width: 100px;
+            max-height: 100px;
+            background-color: transparent;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            
+        }
+
+            .image-slot img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .caption {
+                font-size: 16px;
+                font-weight: bold;
+                color: #e0e0e0;
+                text-align: center; /* Centers the text horizontally */
+                width: 100%; /* Ensures the caption takes the full width of its container */
+                word-wrap: break-word;
+        }
+
+        .grid-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .grid-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: none;
+        }
